@@ -7,7 +7,7 @@ workflows:
       - node/test:
           pre-steps:
             - run:
-                command: echo "install custom dependency"
+                command: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
           matrix:
             parameters:
               version:
@@ -17,7 +17,3 @@ workflows:
                 - 15.8.0
             run-command:
               - test:ci
-            setup:
-              - run:
-                  command: |
-                    npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
