@@ -5,6 +5,9 @@ workflows:
   tests:
     jobs:
       - node/test:
+          pre-steps:
+            - run:
+                command: echo "install custom dependency"
           matrix:
             parameters:
               version:
