@@ -20,5 +20,4 @@ workflows:
             setup:
               - run:
                   command: |
-                    echo ":::: Using node $(node -v) and npm $(npm -v)"
-                    npm config set 
+                    npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
